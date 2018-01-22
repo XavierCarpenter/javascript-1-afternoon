@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var name = 'Tyler';
+var name = "Tyler";
 // Do not edit the code above.
 
 /*
@@ -17,9 +17,14 @@ var name = 'Tyler';
   If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
 */
 
-//Code Here
-
-
+function isTyler(name) {
+  if (name === "Tyler") {
+    return true;
+  } else {
+    return false;
+  }
+}
+isTyler();
 
 ////////// PROBLEM 2 //////////
 
@@ -27,9 +32,11 @@ var name = 'Tyler';
   Create a function called getName that uses prompt() to prompt the user for their name and then returns the given name.
 */
 
-//Code Here
-
-
+function getName() {
+  let yourName = prompt("please enter your name");
+  return yourName;
+}
+console.log(getName());
 
 ////////// PROBLEM 3 //////////
 
@@ -40,9 +47,12 @@ var name = 'Tyler';
   Example: "Welcome, Bob Joe"
 */
 
-//Code Here
+function welcome() {
+  let myName = getName();
+  alert("Welcome, " + myName);
+}
 
-
+welcome();
 
 ////////// PROBLEM 4 //////////
 
@@ -50,9 +60,8 @@ var name = 'Tyler';
   What is the difference between arguments and parameters?
 */
 
-//Answer Here
-
-
+/*Parameters are more like placeholders, and arguments will be the actual values
+ you pass through the the function */
 
 ////////// PROBLEM 5 //////////
 
@@ -60,7 +69,7 @@ var name = 'Tyler';
   What are all the falsy values in JavaScript and how do you check if something is falsy?
 */
 
-//Answer Here
+/* 0, Null, " ", undefined
 
 
 
@@ -70,25 +79,24 @@ var name = 'Tyler';
   Create a function called myName that returns your name
 */
 
-//Code Here
-  
-
+function myName() {
+  return "Xavier";
+}
+myName();
 
 /*
   Now save the function definition of myName into a new variable called newMyName
 */
 
-//Code Here
-
-
+function newMyName(def) {
+  def = myName();
+}
 
 /*
   Now alert the result of invoking newMyName
 */
 
-// Code Here
-
-
+alert(newMyName(def));
 
 ////////// PROBLEM 7 //////////
 
@@ -96,20 +104,23 @@ var name = 'Tyler';
   Create a function called outerFn which returns an anonymous function which returns your name.
 */
 
-//Code Here
-
-
+function outerFn() {
+  return function() {
+    return "Xavier";
+  };
+}
+outerFn();
 
 /*
   Now save the result of invoking outerFn into a variable called innerFn.
 */
 
-//Code Here
-
-
+function innerFn() {
+  return outerFn();
+}
 
 /* 
   Now invoke innerFn.
 */
 
-// Code Here
+return innerFn();
